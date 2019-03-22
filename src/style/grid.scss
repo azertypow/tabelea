@@ -13,6 +13,10 @@
   }
 }
 
+.g-container__coll--to-right {
+  margin-left: auto;
+}
+
 @for $i from 1 to ($gutter-number + 1) {
   .g-container__skip-#{$i}-#{$gutter-number} {
     margin-left: 100% / $gutter-number * $i;
@@ -23,3 +27,4 @@
   padding-left: $gutter-width / 2;
   padding-right: $gutter-width / 2;
 }
+

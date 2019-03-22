@@ -8,8 +8,11 @@
 
 .l-images-slide {
 
-  &.is-navigable {
+  &.is-navigable:not(.is-auto) {
     cursor: pointer;
+  }
+
+  &.is-navigable {
 
     .l-images-slide__image {
       display: none;
