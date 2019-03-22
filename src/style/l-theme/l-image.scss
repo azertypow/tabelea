@@ -1,0 +1,23 @@
+.l-images-slide__image {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-position: left;
+}
+
+.l-images-slide {
+
+  &.is-navigable {
+    cursor: pointer;
+
+    .l-images-slide__image {
+      display: none;
+
+      &.current {
+        display: block;
+      }
+    }
+  }
+}
+

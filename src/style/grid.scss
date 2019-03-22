@@ -1,0 +1,25 @@
+@import "./params";
+
+.g-container {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 to ($gutter-number + 1) {
+  .g-container__coll-#{$i}-#{$gutter-number} {
+    width: 100% / $gutter-number * $i;
+    box-sizing: border-box;
+  }
+}
+
+@for $i from 1 to ($gutter-number + 1) {
+  .g-container__skip-#{$i}-#{$gutter-number} {
+    margin-left: 100% / $gutter-number * $i;
+  }
+}
+
+.g-gutter {
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+}

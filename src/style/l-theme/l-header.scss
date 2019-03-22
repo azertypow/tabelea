@@ -1,0 +1,26 @@
+.l-site-header {
+  height: $site-header-height;
+  display: block;
+  position: fixed;
+  background: white;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+}
+
+.l-site-header__container {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.l-site-header__text {
+  min-width: 100%;
+  white-space: nowrap;
+  margin: 0;
+  height: 1ex;
+  line-height: 1ex;
+  position: relative;
+}
