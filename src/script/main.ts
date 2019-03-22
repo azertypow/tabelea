@@ -1,9 +1,12 @@
 import verticalTextScrolling from "@azertypow/vertical-text-scrolling/src/textToScroll"
 import ClickNavigator from "./clickNavigation"
+import HeaderDescription from "./HeaderDescription"
 
 addScrollOnHeaderFixedText()
 addClickNavigationOnProjectImages()
 addAutomaticTimerImageNavigation()
+
+addDescriptionToHeaderSystem()
 
 function addScrollOnHeaderFixedText() {
   const elementToScroll = document.querySelector(".text-to-scroll")
@@ -11,8 +14,6 @@ function addScrollOnHeaderFixedText() {
     verticalTextScrolling(elementToScroll, 15)
   }
 }
-
-
 
 function addClickNavigationOnProjectImages() {
   const imageSlideContainers = document.querySelectorAll(".l-images-slide:not(.is-auto)")
@@ -36,6 +37,20 @@ function addAutomaticTimerImageNavigation() {
 
     if(element instanceof HTMLElement) {
       new ClickNavigator(element, "is-navigable", true)
+    }
+  }
+}
+
+function addDescriptionToHeaderSystem() {
+  const headerForDescription = document.querySelector(".l-site-header__text")
+
+  const nodeListOfImageContainer = document.querySelectorAll(".l-images-container")
+
+  for(const i in nodeListOfImageContainer) {
+    const imageContainer = nodeListOfImageContainer[i]
+
+    if(imageContainer instanceof HTMLElement) {
+      new HeaderDescription(imageContainer, headerForDescription)
     }
   }
 }

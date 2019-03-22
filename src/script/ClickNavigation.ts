@@ -48,8 +48,6 @@ export default class ClickNavigator {
 
     if(isNaN(timer)) timer = this.DEFAULT_AUTO_SLIDE_TIMER
 
-    console.log(timer)
-
     setTimeout(() => {
       this.currentIndex = this._currentIndex + 1
 
