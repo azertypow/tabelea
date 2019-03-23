@@ -10,4 +10,12 @@ html {
 
 body {
   font-family: Minion, serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  @if $margin-document == true {
+    margin-left:  -$gutter-width;
+    margin-right: -$gutter-width;
+  }
 }
