@@ -23,6 +23,9 @@
   },
   "dependencies": {
     "@azertypow/vertical-text-scrolling": "^1.0.0",
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "@types/draggabilly": "^2.1.2",
+    "draggabilly": "^2.2.0",
     "normalize.css": "^8.0.1"
   }
 }

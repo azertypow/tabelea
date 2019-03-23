@@ -29,14 +29,16 @@ export default class ClickNavigator {
 
     if(this.arrayOfElement.length > 1) {
       _parentContainer.classList.add(_customContainerNavigable)
+
       if(!_timer) {
         _parentContainer.addEventListener("click", () => {
           this.currentIndex = this._currentIndex + 1
         });
+      } else {
+        this.setTimerImageNavigation()
       }
 
       this.setElementStatus()
-      this.setTimerImageNavigation()
     }
   }
 

@@ -1,17 +1,26 @@
 import verticalTextScrolling from "@azertypow/vertical-text-scrolling/src/textToScroll"
 import ClickNavigator from "./clickNavigation"
 import HeaderDescription from "./HeaderDescription"
+import * as draggabilly from "draggabilly"
+import OpenCloseElement from "./OpenCloseElement"
+
+const Draggabilly = draggabilly.default
 
 addScrollOnHeaderFixedText()
 addClickNavigationOnProjectImages()
 addAutomaticTimerImageNavigation()
-
 addDescriptionToHeaderSystem()
+addCardDraggabilly()
+
+const elementToOpenClose = document.querySelector(".to-open-close")
+const elementToggleClose = document.querySelector(".is-open-toggle")
+
+if(elementToOpenClose instanceof HTMLElement && elementToggleClose instanceof HTMLElement) new OpenCloseElement(elementToOpenClose, elementToggleClose)
 
 function addScrollOnHeaderFixedText() {
   const elementToScroll = document.querySelector(".text-to-scroll")
   if(elementToScroll instanceof HTMLElement) {
-    verticalTextScrolling(elementToScroll, 15)
+    verticalTextScrolling(elementToScroll, 25)
   }
 }
 
@@ -54,3 +63,8 @@ function addDescriptionToHeaderSystem() {
     }
   }
 }
+
+function addCardDraggabilly() {
+  new Draggabilly(".l-draggable")
+}
+
