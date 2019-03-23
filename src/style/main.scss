@@ -17,5 +17,6 @@ body {
   @if $margin-document == true {
     margin-left:  -$gutter-width;
     margin-right: -$gutter-width;
+    overflow-x: hidden;
   }
 }
