@@ -12,8 +12,6 @@ export default class OpenCloseElement {
     private _elementForOpen: HTMLElement,
     private _elementForClosed = _elementForOpen) {
 
-    console.log(_elementForOpen)
-
     if(_elementForClosed === _elementForOpen) {
       _elementForOpen.addEventListener("click", this._setEventToggle_open.bind(this))
     } else {

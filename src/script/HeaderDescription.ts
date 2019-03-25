@@ -14,14 +14,7 @@ export default class HeaderDescription {
   }
 
   private setThisDescriptionPutToElementEvent() {
-
-    console.log("description element: ", this._descriptionContainer)
-    console.log("element where put desc: ", this._elementToPutDescription)
-
     this._descriptionContainer.addEventListener("mouseenter", () => {
-
-      console.log("enter")
-
       this._elementToPutDescription.innerHTML = this._descriptionElement.innerHTML
     })
   }
