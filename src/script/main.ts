@@ -1,70 +1,30 @@
-import verticalTextScrolling from "@azertypow/vertical-text-scrolling/src/textToScroll"
-import ClickNavigator from "./clickNavigation"
-import HeaderDescription from "./HeaderDescription"
-import * as draggabilly from "draggabilly"
-import OpenCloseElement from "./OpenCloseElement"
+import initScrollOnHeaderFixedText from "./initScrollOnHeaderFixedText"
+import initClickNavigationOnProjectImages from "./initClickNavigationOnProjectImages"
+import initAutomaticTimerImageNavigation from "./initAutomaticTimerImageNavigation"
+import initDescriptionToHeaderSystem from "./initDescriptionToHeaderSystem"
+import initCardDraggabilly from "./initCardDraggabilly"
+import initLoopScrolling from "./initLoopScrolling"
+import initOpenCloseContact from "./initOpenCloseContact"
+import PercentMarginTopPosition from "./PercentMarginTopPosition"
 
-const Draggabilly = draggabilly.default
+initScrollOnHeaderFixedText()
+initClickNavigationOnProjectImages()
+initAutomaticTimerImageNavigation()
+initDescriptionToHeaderSystem()
+initCardDraggabilly()
+initLoopScrolling()
+initOpenCloseContact()
 
-addScrollOnHeaderFixedText()
-addClickNavigationOnProjectImages()
-addAutomaticTimerImageNavigation()
-addDescriptionToHeaderSystem()
-addCardDraggabilly()
+const nodeListOfElementWithPercentPosition = document.querySelectorAll("[data-top]")
 
-const elementToOpenClose = document.querySelector(".to-open-close")
-const elementToggleClose = document.querySelector(".is-open-toggle")
+for(const i in nodeListOfElementWithPercentPosition) {
+  const elementWithPercentPosition = nodeListOfElementWithPercentPosition[i]
 
-if(elementToOpenClose instanceof HTMLElement && elementToggleClose instanceof HTMLElement) new OpenCloseElement(elementToOpenClose, elementToggleClose)
+  if(elementWithPercentPosition instanceof HTMLElement) {
+    const topPosition = parseFloat(elementWithPercentPosition.dataset.top)
 
-function addScrollOnHeaderFixedText() {
-  const elementToScroll = document.querySelector(".text-to-scroll")
-  if(elementToScroll instanceof HTMLElement) {
-    verticalTextScrolling(elementToScroll, 25)
-  }
-}
-
-function addClickNavigationOnProjectImages() {
-  const imageSlideContainers = document.querySelectorAll(".l-images-slide:not(.is-auto)")
-
-  for(const i in imageSlideContainers) {
-    const element = imageSlideContainers[i]
-
-    if(element instanceof HTMLElement) {
-      new ClickNavigator(element)
+    if(typeof topPosition === "number" && !isNaN(topPosition)) {
+      new PercentMarginTopPosition(elementWithPercentPosition, topPosition)
     }
   }
 }
-
-function addAutomaticTimerImageNavigation() {
-  const imageTimerContainers = document.querySelectorAll(".l-images-slide.is-auto")
-
-  console.log(imageTimerContainers)
-
-  for(const i in imageTimerContainers) {
-    const element = imageTimerContainers[i]
-
-    if(element instanceof HTMLElement) {
-      new ClickNavigator(element, "is-navigable", true)
-    }
-  }
-}
-
-function addDescriptionToHeaderSystem() {
-  const headerForDescription = document.querySelector(".l-site-header__text")
-
-  const nodeListOfImageContainer = document.querySelectorAll(".l-images-container")
-
-  for(const i in nodeListOfImageContainer) {
-    const imageContainer = nodeListOfImageContainer[i]
-
-    if(imageContainer instanceof HTMLElement) {
-      new HeaderDescription(imageContainer, headerForDescription)
-    }
-  }
-}
-
-function addCardDraggabilly() {
-  new Draggabilly(".l-draggable")
-}
-
