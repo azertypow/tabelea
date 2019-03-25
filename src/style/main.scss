@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: Minion, serif;
+  font-family: Times, serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -18,5 +18,20 @@ body {
     margin-left:  -$gutter-width;
     margin-right: -$gutter-width;
     overflow-x: hidden;
+  }
+}
+
+.l-images-cache {
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 3px;
+    background: black;
+    bottom: -1px;
+    left: 0;
   }
 }

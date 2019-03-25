@@ -4,6 +4,9 @@
   left: 100%;
   line-height: 1.5ex;
   font-size: $about-size;
-  transform: rotate3d(0, 0, 1, -90deg) translate3d($about-border-margin, -$about-border-margin, 0);
+  transform: rotate3d(0, 0, 1, -90deg);
   transform-origin: bottom left;
+  padding-bottom: $about-border-margin;
+  padding-left: $about-border-margin;
+  cursor: pointer;
 }
