@@ -24,7 +24,14 @@ for(const i in nodeListOfElementWithPercentPosition) {
     const topPosition = parseFloat(elementWithPercentPosition.dataset.top)
 
     if(typeof topPosition === "number" && !isNaN(topPosition)) {
-      new PercentMarginTopPosition(elementWithPercentPosition, topPosition)
+      const percentMarginTopPosition = new PercentMarginTopPosition(elementWithPercentPosition, topPosition)
+      const nodeListOfImagesInPercentMarginTopPosition = elementWithPercentPosition.querySelectorAll("img")
+
+      nodeListOfImagesInPercentMarginTopPosition.forEach((imageElement) => {
+        imageElement.addEventListener("load", () => {
+          percentMarginTopPosition.setMarginTopOfElement()
+        })
+      })
     }
   }
 }
