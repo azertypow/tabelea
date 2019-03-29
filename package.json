@@ -5,7 +5,8 @@
   "main": "src/index.html",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url './' --out-dir './docs'"
+    "build": "parcel build src/index.html --public-url './' --out-dir './docs'",
+    "generate-favicon": "real-favicon generate faviconDescription.json faviconData.json generate_favicon/"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@azertypow/vertical-text-scrolling": "^1.1.2",
     "@shopify/draggable": "^1.0.0-beta.8",
     "@types/draggabilly": "^2.1.2",
+    "cli-real-favicon": "0.0.7",
     "draggabilly": "^2.2.0",
     "normalize.css": "^8.0.1"
   }
