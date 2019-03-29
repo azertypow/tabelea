@@ -33,3 +33,14 @@
     line-height: 1ex;
   }
 }
+
+.vts__new-container.vts__text-to-scroll {
+  padding-left: $header-text-repeat-spacing;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.vts--is-repeat .vts__new-container.vts__text-to-scroll > div + div {
+  padding-left: $header-text-repeat-spacing;
+  box-sizing: border-box;
+}

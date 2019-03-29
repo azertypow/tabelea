@@ -1,9 +1,11 @@
+import verticalTextScrolling from "@azertypow/vertical-text-scrolling/src/textToScroll"
+
 export default class HeaderDescription {
   private readonly _DESCRIPTION_ELEMENT_QUERY_SELECTOR = ".l-images-container__description"
 
   private _descriptionElement: HTMLElement | null = null
 
-  constructor(private readonly _descriptionContainer: HTMLElement, private readonly _elementToPutDescription) {
+  constructor(private readonly _descriptionContainer: HTMLElement, private readonly _elementToPutDescription, private _onMouseEnter?: (_this: HeaderDescription)=>any) {
     const descriptionElement = _descriptionContainer.querySelector(this._DESCRIPTION_ELEMENT_QUERY_SELECTOR)
 
     if(descriptionElement instanceof HTMLElement) {
@@ -13,9 +15,13 @@ export default class HeaderDescription {
     }
   }
 
+  public get HTMLDescription() {
+    return this._descriptionElement.innerHTML
+  }
+
   private setThisDescriptionPutToElementEvent() {
     this._descriptionContainer.addEventListener("mouseenter", () => {
-      this._elementToPutDescription.innerHTML = this._descriptionElement.innerHTML
+      this._onMouseEnter(this)
     })
   }
 }
