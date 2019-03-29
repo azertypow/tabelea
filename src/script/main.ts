@@ -2,7 +2,6 @@ import initClickNavigationOnProjectImages from "./_initClickNavigationOnProjectI
 import initAutomaticTimerImageNavigation from "./_initAutomaticTimerImageNavigation"
 import initDescriptionToHeaderSystem from "./_initDescriptionToHeaderSystem"
 import initCardDraggabilly from "./_initCardDraggabilly"
-import initLoopScrolling from "./_initLoopScrolling"
 import initOpenCloseContact from "./_initOpenCloseContact"
 import PercentMarginTopPosition from "./PercentMarginTopPosition"
 
@@ -10,7 +9,6 @@ initClickNavigationOnProjectImages()
 initAutomaticTimerImageNavigation()
 initDescriptionToHeaderSystem()
 initCardDraggabilly()
-initLoopScrolling()
 initOpenCloseContact()
 
 const nodeListOfElementWithPercentPosition = document.querySelectorAll("[data-top]")
