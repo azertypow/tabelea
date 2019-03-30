@@ -42,6 +42,12 @@ body {
 @media all and (max-width: 800px) {
   .l-images-container {
     width: 100%;
-    margin: auto;
+    margin: auto !important;
+  }
+
+  .l-site-footer {
+    font-size: 3em;
+    padding-bottom: 5rem;
+    padding-left: 5rem;
   }
 }
