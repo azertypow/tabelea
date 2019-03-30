@@ -4,12 +4,15 @@ import initDescriptionToHeaderSystem from "./_initDescriptionToHeaderSystem"
 import initCardDraggabilly from "./_initCardDraggabilly"
 import initOpenCloseContact from "./_initOpenCloseContact"
 import PercentMarginTopPosition from "./PercentMarginTopPosition"
+import imageLoaderIniter from "./imageLoaderIniter"
 
 initClickNavigationOnProjectImages()
 initAutomaticTimerImageNavigation()
 initDescriptionToHeaderSystem()
 initCardDraggabilly()
 initOpenCloseContact()
+
+imageLoaderIniter()
 
 const nodeListOfElementWithPercentPosition = document.querySelectorAll("[data-top]")
 

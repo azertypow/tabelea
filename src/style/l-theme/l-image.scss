@@ -1,9 +1,11 @@
 .l-images-slide__image {
-  display: block;
-  object-fit: contain;
   width: 100%;
-  height: 100%;
-  object-position: left;
+
+  > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .l-images-slide {
